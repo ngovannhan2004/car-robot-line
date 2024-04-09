@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"name": "XeDoLine",
+			"path": "."
+		},
+		{
+			"name": "DoLinePID",
+			"path": "C:/Users/nhann/OneDrive/Documents/PlatformIO/Projects/DoLinePID"
+		},
+		{
+			"name": "TayRobot",
+			"path": "C:/Users/nhann/OneDrive/Documents/PlatformIO/Projects/TayRobot"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.asm": "arm",
+			"cmath": "cpp",
+			"*.tcc": "cpp",
+			"algorithm": "cpp",
+			"iostream": "cpp",
+			"sstream": "cpp",
+			"vector": "cpp",
+			"deque": "cpp",
+			"string": "cpp"
+		}
+	}
+}
