@@ -11,9 +11,10 @@ const byte RIGHT_MOTOR_EN = 6;
 
 // Định nghĩa các chân kết nối với cảm biến
 const int sensorPins[] = {A0, A1, A2, A3, A4};
-const int MAX_SPEED = 160;
+const int MAX_SPEED = 100;
 const int MIN_SPEED = 80;
-const int DEFAULT_SPEED = 180;
+const int DEFAULT_SPEED = 190;
+const int DEFAULT_SPEED_BACK = 140;
 
 const int MAX_LENGTH = 10;
 String queue[MAX_LENGTH];
@@ -171,8 +172,8 @@ bool checkStop()
 // Hàm đi lùi
 void moveBackward(int speed)
 {
-    analogWrite(LEFT_MOTOR_EN, DEFAULT_SPEED);
-    analogWrite(RIGHT_MOTOR_EN, DEFAULT_SPEED);
+    analogWrite(LEFT_MOTOR_EN, DEFAULT_SPEED_BACK);
+    analogWrite(RIGHT_MOTOR_EN, DEFAULT_SPEED_BACK);
     digitalWrite(LEFT_MOTOR_PIN1, LOW);
     digitalWrite(LEFT_MOTOR_PIN2, HIGH);
     digitalWrite(RIGHT_MOTOR_PIN1, LOW);
