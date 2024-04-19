@@ -12,11 +12,11 @@ const byte RIGHT_MOTOR_EN = 6;
 // Định nghĩa các chân kết nối với cảm biến
 const int sensorPins[] = {A0, A1, A2, A3, A4};
 const int MAX_SPEED = 100;
-const int MIN_SPEED = 80;
-const int DEFAULT_SPEED = 190;
-const int DEFAULT_SPEED_BACK = 140;
+const int MIN_SPEED = 85;
+const int DEFAULT_SPEED = 140;
+const int DEFAULT_SPEED_BACK = 110;
 
-const int MAX_LENGTH = 10;
+const int MAX_LENGTH = 15;
 String queue[MAX_LENGTH];
 
 int caclulatePID(int error);
@@ -77,7 +77,7 @@ void loop()
     int pid = caclulatePID(error);
     solve(pid);
 
-    delay(50);
+    delay(30);
     // Serial.println("====================================");
     // delay(2000);
 }
@@ -105,9 +105,9 @@ int calculeError()
 
 int caclulatePID(int error)
 {
-    float kp = 5;
+    float kp = 4;
     float ki = 0.0001;
-    float kd = 10;
+    float kd = 7;
 
     p = error;
     i = i + error;
@@ -187,7 +187,7 @@ void turnRight(int speed)
     Serial.println("Turn right: ");
     Serial.println(speed);
     analogWrite(LEFT_MOTOR_EN, speed);
-    analogWrite(RIGHT_MOTOR_EN, speed / 3);
+    analogWrite(RIGHT_MOTOR_EN, speed / 2);
     digitalWrite(LEFT_MOTOR_PIN1, HIGH);
     digitalWrite(LEFT_MOTOR_PIN2, LOW);
     digitalWrite(RIGHT_MOTOR_PIN1, LOW);
@@ -200,7 +200,7 @@ void turnLeft(int speed)
 
     Serial.println("Turn left: ");
     Serial.println(speed);
-    analogWrite(LEFT_MOTOR_EN, speed / 3);
+    analogWrite(LEFT_MOTOR_EN, speed / 2);
     analogWrite(RIGHT_MOTOR_EN, speed);
     digitalWrite(LEFT_MOTOR_PIN1, LOW);
     digitalWrite(LEFT_MOTOR_PIN2, HIGH);
